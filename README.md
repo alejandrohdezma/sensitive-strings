@@ -1,6 +1,6 @@
 # Scalafix rule for avoiding sensitive interpolations
 
-[![Build Status](https://travis-ci.com/alejandrohdezma/sensitive-strings.svg?branch=master)](https://travis-ci.com/alejandrohdezma/sensitive-strings)
+[![Build Status](https://travis-ci.com/alejandrohdezma/sensitive-strings.svg?branch=master)](https://travis-ci.com/alejandrohdezma/sensitive-strings) ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/com.alejandrohdezma/sensitive-strings?server=https%3A%2F%2Foss.sonatype.org)
 
 This rule reports errors when a "sensitive" type is used inside a string interpolation.
 
