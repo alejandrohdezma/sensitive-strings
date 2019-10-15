@@ -1,9 +1,8 @@
 package com.alejandrohdezma.scalafix.rules
 
+import scala.Function.unlift
 import scala.meta.Term.{Interpolate, Name, Select}
 import scala.meta._
-
-import cats.implicits._
 
 import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
 import metaconfig.generic.Surface
@@ -26,7 +25,7 @@ final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSens
   override def fix(implicit doc: SemanticDocument): Patch =
     doc.tree.collect {
       case Interpolate(Name("s"), _, args) =>
-        args.mapFilter {
+        args collect unlift {
           case name @ Name(_)  => checkSensitiveString(name)
           case Select(_, name) => checkSensitiveString(name)
           case _               => None
