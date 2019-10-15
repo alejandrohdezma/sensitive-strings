@@ -1,3 +1,5 @@
+Global / onChangedBuildSource := ReloadOnSourceChanges
+
 lazy val `sensitive-strings` = project
   .in(file("."))
   .enablePlugins(ScalafixLintRule)
