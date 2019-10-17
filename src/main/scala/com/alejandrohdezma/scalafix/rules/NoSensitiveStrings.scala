@@ -2,16 +2,16 @@ package com.alejandrohdezma.scalafix.rules
 
 import java.util.regex.Pattern
 
+import scala.Function.unlift
+import scala.meta.Term.{Interpolate, Name, Select}
+import scala.meta._
+
 import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
 import metaconfig.generic.Surface
 import metaconfig.{ConfDecoder, Configured}
 import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 import scalafix.lint.Diagnostic
 import scalafix.v1._
-
-import scala.Function.unlift
-import scala.meta.Term.{Interpolate, Name, Select}
-import scala.meta._
 
 final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSensitiveStrings") {
 
