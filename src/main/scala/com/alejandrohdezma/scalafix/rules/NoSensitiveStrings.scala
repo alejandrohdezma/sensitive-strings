@@ -1,14 +1,17 @@
 package com.alejandrohdezma.scalafix.rules
 
-import scala.Function.unlift
-import scala.meta.Term.{Interpolate, Name, Select}
-import scala.meta._
+import java.util.regex.Pattern
 
 import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
 import metaconfig.generic.Surface
 import metaconfig.{ConfDecoder, Configured}
+import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 import scalafix.lint.Diagnostic
 import scalafix.v1._
+
+import scala.Function.unlift
+import scala.meta.Term.{Interpolate, Name, Select}
+import scala.meta._
 
 final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSensitiveStrings") {
 
@@ -57,16 +60,21 @@ final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSens
 object NoSensitiveStrings {
 
   /** Configuration for the rule, contains a list of the sensitive symbols */
-  final case class Config(symbols: List[String]) {
+  final case class Config(symbols: List[String], regex: List[Pattern]) {
+
+    private def matchesRegex(string: String): Boolean =
+      regex.exists(p => string.matches(p.pattern()))
+
+    private val regexMatcher: SymbolMatcher = symbol => matchesRegex(symbol.normalized.value)
 
     /** Checks if a symbol is marked as sensitive */
-    val Sensitive: SymbolMatcher = SymbolMatcher.normalized(symbols: _*)
+    val Sensitive: SymbolMatcher = SymbolMatcher.normalized(symbols: _*) + regexMatcher
 
   }
 
   object Config {
 
-    def default: Config = Config(Nil)
+    def default: Config = Config(Nil, Nil)
 
     implicit val surface: Surface[Config] =
       metaconfig.generic.deriveSurface[Config]
