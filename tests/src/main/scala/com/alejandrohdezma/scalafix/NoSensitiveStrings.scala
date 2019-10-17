@@ -1,9 +1,10 @@
 /*
 rule = NoSensitiveStrings
 NoSensitiveStrings.symbols = [
-  com.alejandrohdezma.scalafix.Password
-  com.alejandrohdezma.scalafix.Password.Id
   com.alejandrohdezma.scalafix.Context
+]
+NoSensitiveStrings.regex = [
+  "com\\.alejandrohdezma\\.scalafix\\.Password.*"
 ]
  */
 
