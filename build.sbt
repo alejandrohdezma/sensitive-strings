@@ -1,7 +1,6 @@
-Global / onChangedBuildSource := ReloadOnSourceChanges
-
 ThisBuild / scalaVersion := "2.12.10"
+ThisBuild / repository   := "sensitive-strings"
 
-enablePlugins(ScalafixLintRule)
-
-lazy val `sensitive-strings` = project.in(file("."))
+lazy val `sensitive-strings` = project
+  .in(file("."))
+  .enablePlugins(ScalafixLintRule)
