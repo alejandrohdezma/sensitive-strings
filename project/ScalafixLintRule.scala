@@ -6,32 +6,31 @@ import scalafix.sbt.ScalafixTestkitPlugin.autoImport._
 
 object ScalafixLintRule extends AutoPlugin {
 
-  override def derivedProjects(proj: ProjectDefinition[_]) =
-    if (proj.projectOrigin != ProjectOrigin.DerivedProject) {
-      lazy val ref = LocalProject("tests")
+  override def derivedProjects(proj: ProjectDefinition[_]) = {
+    lazy val ref = LocalProject("tests")
 
-      lazy val generateTests = Def.task {
-        val file = (sourceManaged in Test).value / "fix" / "RuleSuite.scala"
+    lazy val generateTests = Def.task {
+      val file = (sourceManaged in Test).value / "fix" / "RuleSuite.scala"
 
-        val suite = "class RuleSuite extends scalafix.testkit.SemanticRuleSuite() { runAllTests() }"
+      val suite = "class RuleSuite extends scalafix.testkit.SemanticRuleSuite() { runAllTests() }"
 
-        IO.write(file, suite)
+      IO.write(file, suite)
 
-        Seq(file)
-      }
+      Seq(file)
+    }
 
-      val tests = project
-        .enablePlugins(ScalafixTestkitPlugin)
-        .settings(skip in publish := true)
-        .settings(scalafixTestkitOutputSourceDirectories := List.empty)
-        .settings(scalafixTestkitInputClasspath := fullClasspath.in(ref, Compile).value)
-        .settings(scalafixTestkitInputSourceDirectories := sourceDirectories.in(ref, Compile).value)
-        .settings(libraryDependencies += testkit % Test cross CrossVersion.full)
-        .settings(sourceGenerators in Test += generateTests.taskValue)
-        .dependsOn(LocalProject(proj.id))
+    val tests = project
+      .enablePlugins(ScalafixTestkitPlugin)
+      .settings(skip in publish := true)
+      .settings(scalafixTestkitOutputSourceDirectories := List.empty)
+      .settings(scalafixTestkitInputClasspath := fullClasspath.in(ref, Compile).value)
+      .settings(scalafixTestkitInputSourceDirectories := sourceDirectories.in(ref, Compile).value)
+      .settings(libraryDependencies += testkit % Test cross CrossVersion.full)
+      .settings(sourceGenerators in Test += generateTests.taskValue)
+      .dependsOn(LocalProject(proj.id))
 
-      Seq(tests)
-    } else Nil
+    Seq(tests)
+  }
 
   override def projectSettings: Seq[Def.Setting[_]] = Seq(libraryDependencies += scalafix)
 
