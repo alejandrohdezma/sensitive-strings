@@ -20,6 +20,7 @@ jobs:
     - name: "Rule tests"
       script: sbt test
     - stage: release
+      name: "Release to Sonatype"
       env: RELEASE="true"
       script: sbt ci-release
 
