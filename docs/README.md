@@ -1,6 +1,6 @@
 # Scalafix rule for avoiding sensitive interpolations
 
-[![][travis-badge]][travis] [![][maven-badge]][maven] [![][steward-badge]][steward] [![][mergify-badge]][mergify]
+[![][github-action-badge]][github-action] [![][maven-badge]][maven] [![][steward-badge]][steward] [![][mergify-badge]][mergify]
 
 This rule reports errors when a "sensitive" type is used inside a string interpolation.
 
@@ -38,8 +38,8 @@ NoSensitiveStrings.regex = [
 
 As you can see in the previous example, you can also match against a list of regex using the `regex` configuration and providing a list of patterns.
 
-[travis]: https://travis-ci.com/alejandrohdezma/sensitive-strings
-[travis-badge]: https://travis-ci.com/alejandrohdezma/sensitive-strings.svg?branch=master
+[github-action]: https://github.com/alejandrohdezma/sbt-fix/actions
+[github-action-badge]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Falejandrohdezma%2Fsbt-fix%2Fbadge%3Fref%3Dmaster&style=flat
 
 [maven]: https://search.maven.org/search?q=g:%20com.alejandrohdezma%20AND%20a:sensitive-strings_2.12
 [maven-badge]: https://img.shields.io/maven-central/v/com.alejandrohdezma/sensitive-strings_2.12?color=green
