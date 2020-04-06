@@ -16,7 +16,7 @@
 - Update sbt to 1.3.8 [\#26](https://github.com/alejandrohdezma/sensitive-strings/pull/26) ([scala-steward](https://github.com/scala-steward))
 - Update sbt to 1.3.7 [\#25](https://github.com/alejandrohdezma/sensitive-strings/pull/25) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-fix to 0.2.6 [\#24](https://github.com/alejandrohdezma/sensitive-strings/pull/24) ([scala-steward](https://github.com/scala-steward))
-- Update sbt-mdoc to 2.1.1 [\#23](https://github.com/alejandrohdezma/sensitive-strings/pull/23) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-mdoc to 2.1.5 [\#23](https://github.com/alejandrohdezma/sensitive-strings/pull/23) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-ci-release to 1.5.0 [\#22](https://github.com/alejandrohdezma/sensitive-strings/pull/22) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-mdoc to 2.1.0 [\#21](https://github.com/alejandrohdezma/sensitive-strings/pull/21) ([scala-steward](https://github.com/scala-steward))
 - Update sbt to 1.3.6 [\#20](https://github.com/alejandrohdezma/sensitive-strings/pull/20) ([scala-steward](https://github.com/scala-steward))
