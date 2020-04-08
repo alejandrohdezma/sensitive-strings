@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/alejandrohdezma/sensitive-strings/compare/v0.2.1...HEAD)
 
+🚀 **Features**
+
+- Add `sbt-remove-test-from-pom` plugin [\#56](https://github.com/alejandrohdezma/sensitive-strings/pull/56) ([alejandrohdezma](https://github.com/alejandrohdezma))
+
 📈 **Dependency updates**
 
 - Update sbt-mdoc to 2.1.5 [\#54](https://github.com/alejandrohdezma/sensitive-strings/pull/54) ([scala-steward](https://github.com/scala-steward))
