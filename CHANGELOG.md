@@ -10,6 +10,7 @@
 
 📈 **Dependency updates**
 
+- Update sbt-header to 5.5.0 [\#58](https://github.com/alejandrohdezma/sensitive-strings/pull/58) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-mdoc to 2.1.5 [\#54](https://github.com/alejandrohdezma/sensitive-strings/pull/54) ([scala-steward](https://github.com/scala-steward))
 - Update sbt to 1.3.9 [\#50](https://github.com/alejandrohdezma/sensitive-strings/pull/50) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-mdoc to 2.1.3 [\#48](https://github.com/alejandrohdezma/sensitive-strings/pull/48) ([scala-steward](https://github.com/scala-steward))
@@ -37,6 +38,7 @@
 - Update sbt-fix to 0.2.2 [\#10](https://github.com/alejandrohdezma/sensitive-strings/pull/10) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-fix to 0.2.1 [\#9](https://github.com/alejandrohdezma/sensitive-strings/pull/9) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-fix to 0.2.0 [\#8](https://github.com/alejandrohdezma/sensitive-strings/pull/8) ([scala-steward](https://github.com/scala-steward))
+- Update sbt-scalafmt to 2.2.1 [\#7](https://github.com/alejandrohdezma/sensitive-strings/pull/7) ([scala-steward](https://github.com/scala-steward))
 
 ## [v0.2.1](https://github.com/alejandrohdezma/sensitive-strings/tree/v0.2.1) (2019-10-25)
 
@@ -44,7 +46,6 @@
 
 📈 **Dependency updates**
 
-- Update sbt-scalafmt to 2.2.1 [\#7](https://github.com/alejandrohdezma/sensitive-strings/pull/7) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-scalafmt to 2.2.0 [\#6](https://github.com/alejandrohdezma/sensitive-strings/pull/6) ([scala-steward](https://github.com/scala-steward))
 - Update circe-core, circe-generic, ... to 0.12.3 [\#5](https://github.com/alejandrohdezma/sensitive-strings/pull/5) ([scala-steward](https://github.com/scala-steward))
 - Update scalafmt-core to 2.2.1 [\#4](https://github.com/alejandrohdezma/sensitive-strings/pull/4) ([scala-steward](https://github.com/scala-steward))
