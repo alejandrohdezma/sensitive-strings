@@ -19,6 +19,8 @@ object ScalafixLintRule extends AutoPlugin {
       Seq(file)
     }
 
+    val testkit = "ch.epfl.scala" % "scalafix-testkit" % scalafixVersion
+
     val tests = project
       .enablePlugins(ScalafixTestkitPlugin)
       .settings(skip in publish := true)
@@ -31,11 +33,5 @@ object ScalafixLintRule extends AutoPlugin {
 
     Seq(tests)
   }
-
-  override def projectSettings: Seq[Def.Setting[_]] = Seq(libraryDependencies += scalafix)
-
-  val scalafix = "ch.epfl.scala" %% "scalafix-core" % scalafixVersion
-
-  val testkit = "ch.epfl.scala" % "scalafix-testkit" % scalafixVersion
 
 }
