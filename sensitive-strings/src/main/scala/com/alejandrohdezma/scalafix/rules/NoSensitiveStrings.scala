@@ -25,9 +25,9 @@ import scala.meta.Term.Select
 import scala.meta._
 
 import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
-import metaconfig.generic.Surface
 import metaconfig.ConfDecoder
 import metaconfig.Configured
+import metaconfig.generic.Surface
 import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 import scalafix.lint.Diagnostic
 import scalafix.v1._
