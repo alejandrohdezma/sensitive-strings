@@ -5,6 +5,7 @@ Global / onChangedBuildSource := ReloadOnSourceChanges
 
 addCommandAlias("ci-test", "fix --check; mdoc; test")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
+addCommandAlias("ci-publish", "github; ci-release")
 
 lazy val scalafix = "ch.epfl.scala" %% "scalafix-core" % "[0.9.0,)" % Provided // scala-steward:off
 
