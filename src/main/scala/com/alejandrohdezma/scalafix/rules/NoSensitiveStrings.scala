@@ -19,12 +19,15 @@ package com.alejandrohdezma.scalafix.rules
 import java.util.regex.Pattern
 
 import scala.Function.unlift
-import scala.meta.Term.{Interpolate, Name, Select}
+import scala.meta.Term.Interpolate
+import scala.meta.Term.Name
+import scala.meta.Term.Select
 import scala.meta._
 
 import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
 import metaconfig.generic.Surface
-import metaconfig.{ConfDecoder, Configured}
+import metaconfig.ConfDecoder
+import metaconfig.Configured
 import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 import scalafix.lint.Diagnostic
 import scalafix.v1._
