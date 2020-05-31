@@ -45,7 +45,7 @@ object NoSensitiveStrings {
   s"$p" /* assert: NoSensitiveStrings
      ^
 Don't use `p` inside string interpolations, it may contain sensitive information.
- */
+   */
 
 }
 
