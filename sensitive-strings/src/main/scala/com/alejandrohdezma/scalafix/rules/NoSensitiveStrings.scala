@@ -28,9 +28,10 @@ import com.alejandrohdezma.scalafix.rules.NoSensitiveStrings.Config
 import metaconfig.ConfDecoder
 import metaconfig.Configured
 import metaconfig.generic.Surface
-import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 import scalafix.lint.Diagnostic
 import scalafix.v1._
+
+import scalafix.internal.config.ScalafixMetaconfigReaders.PatternDecoder
 
 final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSensitiveStrings") {
 
