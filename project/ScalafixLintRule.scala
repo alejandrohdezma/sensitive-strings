@@ -12,7 +12,8 @@ object ScalafixLintRule extends AutoPlugin {
     lazy val generateTests = Def.task {
       val file = (sourceManaged in Test).value / "fix" / "RuleSuite.scala"
 
-      val suite = "class RuleSuite extends scalafix.testkit.SemanticRuleSuite() { runAllTests() }"
+      val suite =
+        "class RuleSuite extends scalafix.testkit.AbstractSemanticRuleSuite with org.scalatest.FunSpecLike { runAllTests() }"
 
       IO.write(file, suite)
 
