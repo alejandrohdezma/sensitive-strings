@@ -3,7 +3,7 @@ ThisBuild / organization := "com.alejandrohdezma"
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-addCommandAlias("ci-test", "fix --check; mdoc; test")
+addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; mdoc; scalafixEnable; test")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "github; ci-release")
 
