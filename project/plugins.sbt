@@ -1,4 +1,4 @@
-addSbtPlugin("ch.epfl.scala"             % "sbt-scalafix"             % "0.9.19")
+addSbtPlugin("ch.epfl.scala"             % "sbt-scalafix"             % "0.9.20")
 addSbtPlugin("com.alejandrohdezma"       % "sbt-github-header"        % "0.8.2")
 addSbtPlugin("com.alejandrohdezma"       % "sbt-github-mdoc"          % "0.8.2")
 addSbtPlugin("com.alejandrohdezma"       % "sbt-remove-test-from-pom" % "0.1.0")
