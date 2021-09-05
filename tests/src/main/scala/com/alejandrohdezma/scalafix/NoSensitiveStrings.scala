@@ -30,25 +30,25 @@ object NoSensitiveStrings {
   }
 
   /** Testing interpolating object values */
-  val p: Password          = Password("1234")
+  val p: Password = Password("1234")
 
-  val u: User              = User("me")
+  val u: User = User("me")
 
-  val c: Context           = Context(u, p)
+  val c: Context = Context(u, p)
 
-  val id: Password.Id      = 5
+  val id: Password.Id = 5
 
   val wrap: ContextWrapped = new ContextWrapped(c)
 
-  s"$c"                       // assert: NoSensitiveStrings
+  s"$c" // assert: NoSensitiveStrings
 
-  s"$u"                       // ok, no error messages
+  s"$u" // ok, no error messages
 
-  s"${c.password}"            // assert: NoSensitiveStrings
+  s"${c.password}" // assert: NoSensitiveStrings
 
   s"${wrap.context.password}" // assert: NoSensitiveStrings
 
-  s"$id"                      // assert: NoSensitiveStrings
+  s"$id" // assert: NoSensitiveStrings
 
   s"$p" /* assert: NoSensitiveStrings
      ^
