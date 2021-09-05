@@ -46,11 +46,11 @@ final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSens
 
   override def fix(implicit doc: SemanticDocument): Patch =
     doc.tree.collect { case Interpolate(Name("s"), _, args) =>
-      args collect unlift {
+      args.collect(unlift {
         case name @ Name(_)  => checkSensitiveString(name)
         case Select(_, name) => checkSensitiveString(name)
         case _               => None
-      }
+      })
     }.flatten.asPatch
 
   /** Checks if the provided name is a sensible type */

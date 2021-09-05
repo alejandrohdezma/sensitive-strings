@@ -1,4 +1,5 @@
 import sbt.Keys._
+
 import sbt._
 import scalafix.sbt.BuildInfo.scalafixVersion
 import scalafix.sbt.ScalafixTestkitPlugin
@@ -28,7 +29,7 @@ object ScalafixLintRule extends AutoPlugin {
       .settings(scalafixTestkitOutputSourceDirectories := List.empty)
       .settings(scalafixTestkitInputClasspath := fullClasspath.in(ref, Compile).value)
       .settings(scalafixTestkitInputSourceDirectories := sourceDirectories.in(ref, Compile).value)
-      .settings(libraryDependencies += testkit % Test cross CrossVersion.full)
+      .settings(libraryDependencies += (testkit % Test).cross(CrossVersion.full))
       .settings(sourceGenerators in Test += generateTests.taskValue)
       .dependsOn(LocalProject(proj.id))
 
