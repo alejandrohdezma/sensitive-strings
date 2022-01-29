@@ -13,7 +13,7 @@ package com.alejandrohdezma.scalafix
 object NoSensitiveStrings {
 
   /** Testing interpolating method parameters */
-  //noinspection ScalaUnusedExpression
+  // noinspection ScalaUnusedExpression
   def hello(boolean: Boolean, password: Password, context: Context, user: User): String = {
     s"$password"           // assert: NoSensitiveStrings
     s"$context"            // assert: NoSensitiveStrings
