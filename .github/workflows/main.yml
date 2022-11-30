@@ -2,9 +2,7 @@
 # It is automatically updated after every release of https://github.com/alejandrohdezma/sbt-ci
 # If you want to suggest a change, please open a PR or issue in that repository
 
-# This workflow will update PRs that are out-of-sync with the `main` branch.
-
-name: CI (main)
+name: CI
 
 on:
   push:
