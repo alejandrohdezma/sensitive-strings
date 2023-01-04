@@ -17,6 +17,7 @@ lazy val `sensitive-strings` = projectMatrix
   .jvmPlatform(rulesCrossVersions)
 
 lazy val input = projectMatrix
+  .settings(headerSources / excludeFilter := HiddenFileFilter || "*NoSensitiveStrings.scala")
   .defaultAxes(VirtualAxis.jvm)
   .jvmPlatform(scalaVersions = rulesCrossVersions)
 
