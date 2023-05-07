@@ -20,6 +20,7 @@ lazy val input = projectMatrix
   .settings(headerSources / excludeFilter := HiddenFileFilter || "*NoSensitiveStrings.scala")
   .defaultAxes(VirtualAxis.jvm)
   .jvmPlatform(scalaVersions = rulesCrossVersions)
+  .settings(scalacOptions -= "-Wnonunit-statement")
 
 lazy val testsAggregate = Project("tests", file("target/testsAggregate"))
   .aggregate(tests.projectRefs: _*)
@@ -39,7 +40,7 @@ lazy val tests = projectMatrix
   .customRow(List(V.scala213), List(TargetAxis(V.scala213), VirtualAxis.jvm), Nil)
   .customRow(List(V.scala212), List(TargetAxis(V.scala212), VirtualAxis.jvm), Nil)
   .enablePlugins(ScalafixTestkitPlugin)
+  .settings(scalacOptions -= "-Wnonunit-statement")
 
 lazy val documentation = project
   .enablePlugins(MdocPlugin)
-  .settings(mdocOut := file("."))
