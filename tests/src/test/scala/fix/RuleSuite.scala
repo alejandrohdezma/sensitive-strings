@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
+import org.scalatest.funsuite.AnyFunSuiteLike
 import scalafix.testkit.AbstractSemanticRuleSuite
 
-class RuleSuite extends AbstractSemanticRuleSuite with org.scalatest.FunSpecLike {
+class RuleSuite extends AbstractSemanticRuleSuite with AnyFunSuiteLike {
 
   runAllTests()
 
