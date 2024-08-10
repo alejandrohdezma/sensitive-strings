@@ -18,7 +18,7 @@ package com.alejandrohdezma.scalafix.rules
 
 import java.util.regex.Pattern
 
-import scala.Function.unlift
+import scala.meta.Term.Block
 import scala.meta.Term.Interpolate
 import scala.meta.Term.Name
 import scala.meta.Term.Select
@@ -45,13 +45,15 @@ final case class NoSensitiveStrings(config: Config) extends SemanticRule("NoSens
       " Sensitive types can be defined using the `sensitiveTypes` (array) configuration."
 
   override def fix(implicit doc: SemanticDocument): Patch =
-    doc.tree.collect { case Interpolate(Name("s"), _, args) =>
-      args.collect(unlift {
-        case name @ Name(_)  => checkSensitiveString(name)
-        case Select(_, name) => checkSensitiveString(name)
-        case _               => None
-      })
-    }.flatten.asPatch
+    doc.tree.collect { case Interpolate(Name("s"), _, args) => checkStats(args) }.flatten.asPatch
+
+  def checkStats(stats: List[Stat])(implicit doc: SemanticDocument): List[Patch] =
+    stats.flatMap {
+      case name @ Name(_)  => checkSensitiveString(name).toList
+      case Select(_, name) => checkSensitiveString(name).toList
+      case Block(stats)    => checkStats(stats)
+      case _               => Nil
+    }
 
   /** Checks if the provided name is a sensible type */
   def checkSensitiveString(name: Name)(implicit D: SemanticDocument): Option[Patch] =
