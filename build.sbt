@@ -1,7 +1,7 @@
 ThisBuild / scalaVersion           := "2.13.15"
 ThisBuild / organization           := "com.alejandrohdezma"
 ThisBuild / publish / skip         := true
-ThisBuild / versionPolicyIntention := Compatibility.BinaryCompatible
+ThisBuild / versionPolicyIntention := Compatibility.None
 
 addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; test")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
