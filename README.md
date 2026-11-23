@@ -7,7 +7,7 @@ This rule reports errors when a "sensitive" type is used inside a string interpo
 ## Installation
 
 ```sbt
-scalafixDependencies += "com.alejandrohdezma" %% "sensitive-strings" % "0.4.0"
+scalafixDependencies += "com.alejandrohdezma" %% "sensitive-strings" % "0.5.0"
 ```
 
 ## Configuration
